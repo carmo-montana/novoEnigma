@@ -1,0 +1,148 @@
+body {
+    background: url('../img/fundo.jpg');
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilo base */
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Timer */
+.timer {
+    font-size: 1.5em;
+    color: #ff5555;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Bancada do laboratório */
+.lab-bench {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    margin: 20px auto;
+    background-image: url('../images/lab-bench.jpg');
+    background-size: cover;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Frascos */
+.flask {
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    cursor: grab;
+    transition: transform 0.3s;
+}
+
+.flask:hover {
+    transform: scale(1.05);
+}
+
+.blue { left: 20%; top: 50%; }
+.green { left: 50%; top: 50%; transform: translateX(-50%); }
+.red { right: 20%; top: 50%; }
+
+.liquid {
+    width: 100%;
+    height: 70%;
+    border-radius: 0 0 30px 30px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.8;
+}
+
+.blue { background-color: #1e90ff; }
+.green { background-color: #32cd32; }
+.red { background-color: #ff4500; }
+
+.label {
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+
+.hidden-label {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.flask:hover .hidden-label {
+    opacity: 1;
+}
+
+/* Tubo de ensaio */
+.test-tube {
+    position: absolute;
+    width: 80px;
+    height: 150px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #555;
+}
+
+.liquid-mix {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    transition: height 0.5s, background-color 1s;
+}
+
+/* Pistas ocultas */
+.clue {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.2em;
+}
+
+.clue-1 { top: 30%; left: 15%; }
+.clue-2 { top: 30%; right: 15%; }
+
+.hidden-note {
+    position: absolute;
+    width: 100px;
+    bottom: 10%;
+    right: 10%;
+    opacity: 0.1;
+    transition: opacity 0.5s;
+}
+
+.hidden-note:hover {
+    opacity: 0.8;
+}
+
+/* Botão */
+#mix-button {
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#mix-button:hover {
+    background-color: #5a0092;
+}

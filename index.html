@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Retrato da Alma Perdida</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <audio id="bgSound" loop>
+        <source src="sounds/misterio/misterio1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="clickSound">
+        <source src="sounds/click/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="successSound">
+        <source src="sounds/success/success.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        <h1>O Retrato da Alma Perdida</h1>
+        <p class="subTitulo">Um pintor desapareceu. Encontre as pistas no quadro.</p>
+
+        <div class="puzzle-container">
+            <img src="img/image.png" alt="Pintura misteriosa" class="puzzle-image">
+            
+            <!-- Áreas clicáveis invisíveis -->
+            <div class="hidden-object" data-object="brush" style="top: 35%; left: 25%;"></div>
+            <div class="hidden-object" data-object="clock" style="top: 20%; left: 70%;"></div>
+            <div class="hidden-object" data-object="note" style="top: 60%; left: 50%;"></div>
+            
+            <!-- Cores escondidas -->
+            <div class="color-spot red" data-color="red" style="top: 40%; left: 45%;"></div>
+            <div class="color-spot orange" data-color="orange" style="top: 50%; left: 50%;"></div>
+            <div class="color-spot yellow" data-color="yellow" style="top: 55%; left: 55%;"></div>
+        </div>
+        
+        <div class="clue-display" id="clue-display">
+            <p>Observe a pintura cuidadosamente. Há algo escondido...</p>
+        </div>
+        
+        <div class="inventory">
+            <h3>Itens Encontrados:</h3>
+            <div class="inventory-items" id="inventory-items"></div>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="script/script.js"></script>
+    <script src="script/transi.js"></script>
+</body>
+</html>

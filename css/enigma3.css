@@ -1,0 +1,92 @@
+/* Estilo base */
+.puzzle-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px auto;
+    width: 800px;
+}
+
+.bookshelf {
+    width: 200px;
+    background-color: #3a2c1a;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px #000;
+}
+
+.book {
+    background-color: #8b5a2b;
+    color: #e0d0b0;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: grab;
+    border-radius: 3px;
+    transition: transform 0.3s;
+}
+
+.book:hover {
+    transform: translateX(5px);
+}
+
+.spine {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+}
+
+.reading-desk {
+    flex-grow: 1;
+    background-color: #2a2118;
+    padding: 20px;
+    min-height: 300px;
+    position: relative;
+    border: 1px solid #555;
+}
+
+/* Efeito de lanterna UV */
+.flashlight {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(150, 50, 255, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+    display: none;
+}
+
+#use-flashlight {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+/* Páginas com texto invisível */
+.hidden-text {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.uv-reveal .hidden-text {
+    color: #bd00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+/* Área de decodificação */
+.decoder {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#encoded-message {
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    color: #ff9900;
+}

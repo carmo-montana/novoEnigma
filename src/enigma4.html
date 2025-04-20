@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 4: O Jardim dos Segredos</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/enigma4.css">
+</head>
+<body>
+    <!-- Sons -->
+    <audio id="bgSound" loop>
+        <source src="../sounds/misterio/misterio3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="flowerSound">
+        <source src="../sounds/click/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="waterSound">
+        <source src="../sounds/success/success.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="game-container">
+        <h1>O Jardim dos Segredos</h1>
+        <p class="subtitle">As flores murmuram... se você souber ouvir.</p>
+        
+        <div class="puzzle-container">
+            <!-- Jardim (imagem de fundo com áreas interativas) -->
+            <div class="garden-scene">
+                <!-- Flores clicáveis -->
+                <div class="flower" data-flower="rose" style="top: 30%; left: 20%;">
+                    <div class="petals">3</div>
+                </div>
+                <div class="flower" data-flower="lily" style="top: 50%; left: 70%;">
+                    <div class="petals">1</div>
+                </div>
+                <div class="flower" data-flower="sunflower" style="top: 50%; left: 40%;">
+                    <div class="petals">4</div>
+                </div>
+                
+                <!-- Fonte de água (interação especial) -->
+                <div class="water-fountain" id="water-fountain"></div>
+                
+                <!-- Árvore com inscrições -->
+                <div class="ancient-tree" id="ancient-tree"></div>
+            </div>
+            
+            <!-- Interface de sequência -->
+            <div class="sequence-panel">
+                <h3>Sequência das Flores:</h3>
+                <div class="sequence-display" id="sequence-display"></div>
+                <button id="check-sequence">Verificar</button>
+            </div>
+        </div>
+        
+        <div class="clue-display" id="clue-display">
+            <p>Regue as flores na ordem correta para revelar o caminho.</p>
+        </div>
+    </div>
+
+    <script src="../script/enigam4.js"></script>
+</body>
+</html>

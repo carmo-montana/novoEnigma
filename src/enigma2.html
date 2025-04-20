@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 2: O Espelho do Tempo</title>
+    <link rel="stylesheet" href="../css/enigma2.css">
+</head>
+<body>
+    <!-- Sons -->
+    <audio id="bgSound" loop>
+        <source src="../sounds/misterio/misterio4.mp3" type="audio/mp3">
+    </audio>
+    <audio id="clickSound">
+        <source src="../sounds/click/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="successSound">
+        <source src="../sounds/success/success.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        <h1>O Espelho do Tempo</h1>
+        <p class="subtitle">O reflexo mostra o passado... mas algo está errado.</p>
+        
+        <div class="puzzle-container">
+            <!-- Mundo Real -->
+            <div class="scene real-world">
+                <img src="../img/quartoEspelho.png" alt="Quarto com espelho" class="puzzle-image">
+                
+                <!-- Objetos interativos no mundo real -->
+                <div class="hidden-object" data-object="knife" style="top: 65%; left: 30%;"></div>
+                <div class="hidden-object" data-object="ring" style="top: 40%; left: 50%;"></div>
+                <div class="hidden-object" data-object="diary" style="top: 25%; left: 70%;"></div>
+            </div>
+            
+            <!-- Mundo do Espelho (sobreposto) -->
+            <div class="scene mirror-world">
+                <img src="../img/reflexo.png" alt="Reflexo do quarto" class="puzzle-image mirror-effect">
+                
+                <!-- Objetos interativos no reflexo (versões alteradas) -->
+                <div class="hidden-object" data-object="knife-mirror" style="top: 65%; left: 70%;"></div>
+                <div class="hidden-object" data-object="ring-mirror" style="top: 40%; left: 50%;"></div>
+                <div class="hidden-object" data-object="clock-mirror" style="top: 20%; left: 20%;"></div>
+            </div>
+            
+            <!-- Controle do tempo (para a solução final) -->
+            <div class="time-control">
+                <button id="reverse-time">Voltar no Tempo</button>
+                <span id="time-display">Presente</span>
+            </div>
+        </div>
+        
+        <div class="clue-display" id="clue-display">
+            <p>O espelho não reflete o presente... o que aconteceu aqui?</p>
+        </div>
+        
+        <div class="inventory">
+            <h3>Pistas Coletadas:</h3>
+            <div class="inventory-items" id="inventory-items"></div>
+        </div>
+    </div>
+
+    <script src="../script/enigma2.js"></script>
+</body>
+</html>

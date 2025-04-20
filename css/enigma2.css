@@ -1,0 +1,103 @@
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.puzzle-container {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: 20px auto;
+    border: 2px solid #555;
+    overflow: hidden;
+}
+
+.puzzle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.real-world {
+    z-index: 1;
+}
+
+.mirror-world {
+    z-index: 2;
+    opacity: 0.7;
+    pointer-events: none; /* Inicialmente não interativo */
+}
+
+.mirror-effect {
+    filter: sepia(50%) contrast(120%) brightness(80%);
+}
+
+.hidden-object {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hidden-object:hover {
+    opacity: 0.7;
+}
+
+.time-control {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#reverse-time {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#reverse-time:hover {
+    background-color: #a00;
+}
+
+#time-display {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* Efeito de "tempo revertido" */
+.mirror-active {
+    pointer-events: all !important;
+    opacity: 1 !important;
+    filter: sepia(20%) hue-rotate(180deg) !important;
+}

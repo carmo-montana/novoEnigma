@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 5: O Laboratório Secreto</title>
+    <link rel="stylesheet" href="../css/enigma5.css">
+</head>
+<body>
+    <!-- Sons -->
+    <audio id="bgSound" loop>
+        <source src="../sounds/misterio/terro2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bubbleSound">
+        <source src="../sounds/click/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="alarmSound">
+        <source src="../sounds/success/success.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        <h1>O Laboratório Secreto</h1>
+        <p class="subtitle">Cuidado: uma mistura errada pode ser fatal.</p>
+        
+        <!-- Timer -->
+        <div class="timer" id="timer">03:00</div>
+        
+        <div class="puzzle-container">
+            <!-- Bancada do laboratório -->
+            <div class="lab-bench">
+                <!-- Frascos arrastáveis -->
+                <div class="flask" data-flask="blue" draggable="true">
+                    <div class="liquid blue"></div>
+                    <div class="label hidden-label">Ázur</div>
+                </div>
+                <div class="flask" data-flask="green" draggable="true">
+                    <div class="liquid green"></div>
+                    <div class="label hidden-label">Verdete</div>
+                </div>
+                <div class="flask" data-flask="red" draggable="true">
+                    <div class="liquid red"></div>
+                    <div class="label hidden-label">Rubra</div>
+                </div>
+                
+                <!-- Tubo de ensaio (área de mistura) -->
+                <div class="test-tube" id="test-tube">
+                    <div class="liquid-mix" id="liquid-mix"></div>
+                </div>
+                
+                <!-- Pistas ocultas -->
+                <div class="clue clue-1">H<sub>2</sub>O + ?</div>
+                <div class="clue clue-2">2:1:1</div>
+                <img src="../img/OIP (2).jpeg" alt="Nota escondida" class="hidden-note">
+            </div>
+            
+            <!-- Botão de verificação -->
+            <button id="mix-button">Misturar</button>
+        </div>
+        
+        <div class="clue-display" id="clue-display">
+            <p>O caderno do cientista menciona uma sequência: <em>"Água primeiro, depois a cor do sangue, por fim a cor da folha."</em></p>
+        </div>
+    </div>
+
+    <script src="../script/enigma5.js"></script>
+</body>
+</html>

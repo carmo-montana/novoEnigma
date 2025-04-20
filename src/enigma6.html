@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Quadro dos Olhos Fechados</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../css/enigma6.css">
+</head>
+<body>
+    <!-- Sons -->
+    <audio id="bgSound" loop>
+        <source src="../sounds/misterio/terro1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="errorSound">
+        <source src="../sounds/click/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="revealSound">
+        <source src="../sounds/success/success.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        <h1>O Quadro dos Olhos Fechados</h1>
+        <p class="subtitle">"Ela não quer ver. Mas você precisa."</p>
+        
+        <div class="gallery-scene">
+            <!-- Quadros interativos -->
+            <div class="painting" data-painting="before">
+                <img src="../img/antesPromesa.png" alt="Antes da Promessa">
+                <p class="caption">Antes da Promessa</p>
+                <div class="hidden-detail candle"></div>
+            </div>
+            
+            <div class="painting" data-painting="during">
+                <img src="../img/duranteSilencio.png" alt="Durante o Silêncio">
+                <p class="caption">Durante o Silêncio</p>
+                <div class="hidden-detail tear"></div>
+            </div>
+            
+            <div class="painting" data-painting="after">
+                <img src="../img/arrepedimento.png" alt="Após o Arrependimento">
+                <p class="caption">Após o Arrependimento</p>
+                <div class="hidden-detail moon"></div>
+            </div>
+            
+            <!-- Botões de interação -->
+            <div class="buttons">
+                <button class="symbol-btn" data-symbol="candle">🕯️</button>
+                <button class="symbol-btn" data-symbol="blood">🩸</button>
+                <button class="symbol-btn" data-symbol="moon">🌕</button>
+            </div>
+        </div>
+        
+        <div class="clue-display" id="clue-display">
+            <p>Os quadros escondem a ordem. Observe os detalhes...</p>
+        </div>
+    </div>
+
+    <script src="../script/enigm6.js"></script>
+</body>
+</html>

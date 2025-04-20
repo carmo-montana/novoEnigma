@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 3: A Biblioteca Proibida</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/enigma3.css">
+</head>
+<body>
+    <!-- Sons -->
+    <audio id="bgSound" loop>
+        <source src="../sounds/misterio/misterio2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pageSound">
+        <source src="../sounds/click/click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="codeSound">
+        <source src="../sounds/success/success.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="game-container">
+        <h1>A Biblioteca Proibida</h1>
+        <p class="subtitle">Um livro foi roubado... e seu conteúdo pode ser perigoso.</p>
+        
+        <div class="puzzle-container">
+            <!-- Estante de livros -->
+            <div class="bookshelf">
+                <div class="book" data-book="cipher" draggable="true">
+                    <div class="spine">Códigos Antigos</div>
+                </div>
+                <div class="book" data-book="diary" draggable="true">
+                    <div class="spine">Diário do Alquimista</div>
+                </div>
+                <div class="book" data-book="blank" draggable="true">
+                    <div class="spine">Páginas em Branco</div>
+                </div>
+            </div>
+            
+            <!-- Área de leitura (onde os livros são abertos) -->
+            <div class="reading-desk" id="reading-desk">
+                <p>Arraste um livro para cá para examiná-lo.</p>
+            </div>
+            
+            <!-- Lanterna (para revelar mensagens ocultas) -->
+            <div class="flashlight" id="flashlight"></div>
+            <button id="use-flashlight">Usar Lanterna UV</button>
+            
+            <!-- Interface de decodificação -->
+            <div class="decoder">
+                <h3>Decifrar Código:</h3>
+                <p id="encoded-message">12-15-4-5</p>
+                <input type="text" id="decoder-input" placeholder="Digite a tradução...">
+                <button id="submit-code">Verificar</button>
+            </div>
+        </div>
+        
+        <div class="clue-display" id="clue-display">
+            <p>Alguns livros aqui não são o que parecem...</p>
+        </div>
+    </div>
+
+    <script src="../script/enigm3.js"></script>
+</body>
+</html>
