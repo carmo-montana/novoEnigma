@@ -102,3 +102,31 @@ body {
 @keyframes eyesOpen {
     to { filter: contrast(150%) brightness(80%); }
 }
+
+/* Revelação dos olhos (espelhos) */
+.eyes-open {
+    animation: eyesOpen 2s forwards;
+    position: relative;
+}
+
+@keyframes eyesOpen {
+    0% { filter: brightness(100%) contrast(100%); }
+    50% { filter: brightness(150%) contrast(150%); }
+    100% { 
+        filter: brightness(80%) contrast(200%) hue-rotate(180deg);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+    }
+}
+
+/* Efeito de espelho nos olhos (após a animação) */
+.painting img.eyes-open::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 30%;
+    height: 15%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}

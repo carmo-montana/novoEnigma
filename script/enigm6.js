@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const symbolButtons = document.querySelectorAll('.symbol-btn');
     const clueDisplay = document.getElementById('clue-display');
     const galleryScene = document.querySelector('.gallery-scene');
+    const paintingImages = document.querySelectorAll('.painting img');
     
     // Sons
     const bgSound = document.getElementById('bgSound');
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bgSound.volume = whisperVolume;
     bgSound.play();
     
-    // Observar detalhes nos quadros
+    // Observar detalhes nos quadros (pistas)
     paintings.forEach(painting => {
         painting.addEventListener('click', function() {
             const paintingType = this.dataset.painting;
@@ -27,13 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             switch(paintingType) {
                 case 'before':
-                    clue = "A vela está apagada... será que precisa ser acesa?";
+                    clue = "A vela está apagada... será que precisa ser acesa? (🕯️)";
                     break;
                 case 'during':
-                    clue = "Uma lágrima de sangue escorre silenciosamente.";
+                    clue = "Uma lágrima de sangue escorre silenciosamente. (🩸)";
                     break;
                 case 'after':
-                    clue = "A lua observa tudo, mesmo atrás das nuvens.";
+                    clue = "A lua observa tudo, mesmo atrás das nuvens. (🌕)";
                     break;
             }
             
@@ -47,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const symbol = this.dataset.symbol;
             playerSequence.push(symbol);
             
-            // Verifica se a sequência está errada
-            if (playerSequence.length <= correctSequence.length && 
-                playerSequence[playerSequence.length - 1] !== correctSequence[playerSequence.length - 1]) {
+            // Verifica se a sequência está correta até o momento
+            const currentStep = playerSequence.length - 1;
+            if (playerSequence[currentStep] !== correctSequence[currentStep]) {
                 resetPuzzle();
                 return;
             }
@@ -70,22 +71,32 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryScene.classList.add('distort');
         errorSound.play();
         
-        clueDisplay.innerHTML = '<p class="error">Algo está errado... os quadros sussurram mais alto.</p>';
+        clueDisplay.innerHTML = '<p class="error">❌ Ordem incorreta. Os quadros sussurram mais alto...</p>';
         
         setTimeout(() => {
             galleryScene.classList.remove('distort');
         }, 1000);
     }
     
-    // Revelação final
+    // Revelação final (olhos se abrindo como espelhos)
     function revealSecret() {
         revealSound.play();
-        paintings.forEach(painting => {
-            painting.classList.add('eyes-open');
+        
+        // Adiciona a classe 'eyes-open' para ativar a animação CSS
+        paintingImages.forEach(img => {
+            img.classList.add('eyes-open');
         });
+        
+        // Altera as imagens para versões com olhos abertos (espelhos)
+        setTimeout(() => {
+            paintingImages[0].src = "../img/menino1.png";
+            paintingImages[1].src = "../img/menino2.jpg";
+            paintingImages[2].src = "../img/menino3.jpg";
+        }, 1000);
         
         clueDisplay.innerHTML = '<p class="success">"Você viu. Agora será visto."</p>';
         
+        // Avança para o próximo enigma após 5 segundos
         setTimeout(() => {
             window.location.href = "https://bespoke-manatee-0c1e91.netlify.app/";
         }, 5000);
