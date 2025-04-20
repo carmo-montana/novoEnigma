@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             codeSound.play();
             clueDisplay.innerHTML = '<p class="success">✅ Correto! O compartimento secreto se abre: <strong>"O livro está atrás do quadro."</strong></p>';
             setTimeout(() => {
-                window.location.href = "../src/enigma4";
+                window.location.href = "../src/enigma4.html";
             }, 3000);
         } else {
             clueDisplay.innerHTML = '<p class="error">❌ Código incorreto. Consulte o livro de cifras.</p>';
