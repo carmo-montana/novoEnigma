@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Avança para o próximo enigma após 5 segundos
         setTimeout(() => {
-            window.location.href = "https://bespoke-manatee-0c1e91.netlify.app/";
+            window.location.href = "https://clever-arithmetic-9baab1.netlify.app/";
         }, 5000);
     }
 });
